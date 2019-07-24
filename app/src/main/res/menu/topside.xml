@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="first"></item>
+    <item android:title="second"></item>
+    <item android:title="third"></item>
+    <item android:title="fourth"></item>
+    <item android:title="fifth"></item>
+</menu>

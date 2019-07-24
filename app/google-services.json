@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "212418843966",
+    "firebase_url": "https://houseyspicey.firebaseio.com",
+    "project_id": "houseyspicey",
+    "storage_bucket": "houseyspicey.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212418843966:android:84e7755685cd27b9",
+        "android_client_info": {
+          "package_name": "com.example.lazeeztadka.hoseyspicey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212418843966-ijt3d4u6nqs82lcglo6d97qhm8t9jlau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lazeeztadka.hoseyspicey",
+            "certificate_hash": "45c0b7a4a0169b20eb505ded70a740e8f4492b40"
+          }
+        },
+        {
+          "client_id": "212418843966-l56qn2tq5sko10jtpbim5ic51f59guvt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB843XcRMBC8qCyKpegATqY3bHQXe1Zu-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212418843966-l56qn2tq5sko10jtpbim5ic51f59guvt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
