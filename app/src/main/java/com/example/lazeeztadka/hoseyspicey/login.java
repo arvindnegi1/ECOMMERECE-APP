@@ -1,5 +1,6 @@
 package com.example.lazeeztadka.hoseyspicey;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -18,13 +19,17 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class login extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, View.OnClickListener {
 CheckBox cb;
 EditText psw,emi;
 Button sign,signup;
+    ProgressDialog pd;
     private FirebaseAuth mAuth;
+    FirebaseDatabase database;
+    DatabaseReference mref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +43,10 @@ Button sign,signup;
         sign.setOnClickListener(this);
         signup.setOnClickListener(this);
         mAuth=FirebaseAuth.getInstance();
-
+        database=FirebaseDatabase.getInstance();
+       mref=database.getReference("Reg_user");
+        pd=new ProgressDialog(login.this);
+        pd.setMessage("LOADING");
     }
     @Override
     public void onStart(){
@@ -92,14 +100,18 @@ Button sign,signup;
             mAuth.signInWithEmailAndPassword(email,passw).addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
+
+                    pd.show();
                     if(task.isSuccessful())
                     { Toast.makeText(login.this,"SUCCESSFULL",Toast.LENGTH_SHORT).show();
                         FirebaseUser currentUser = mAuth.getCurrentUser();
+                        //mref.child(mAuth.getUid()).child("name").setValue("changed");
                         updateUI(currentUser);
                     }
                     else
                     {
                         Toast.makeText(login.this,"Failed",Toast.LENGTH_SHORT).show();
+                        pd.cancel();
                     }
                 }
             });
