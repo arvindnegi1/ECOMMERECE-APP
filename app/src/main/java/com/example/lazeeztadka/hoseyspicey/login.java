@@ -97,11 +97,12 @@ Button sign,signup;
             String passw,email;
             passw=psw.getText().toString();
             email=emi.getText().toString();
+            pd.show();
             mAuth.signInWithEmailAndPassword(email,passw).addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
-                    pd.show();
+
                     if(task.isSuccessful())
                     { Toast.makeText(login.this,"SUCCESSFULL",Toast.LENGTH_SHORT).show();
                         FirebaseUser currentUser = mAuth.getCurrentUser();
